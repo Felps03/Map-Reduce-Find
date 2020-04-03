@@ -13,6 +13,7 @@ console.log(produtosComReajuste)
 
 
 
+
 // console.time('find')
 // const search = ouputdynamo.find(element => element.countyName.S === 'RIO GRANDE')
 // console.timeEnd('find')
