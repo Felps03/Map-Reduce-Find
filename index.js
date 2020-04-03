@@ -1,37 +1,49 @@
 const person  = require('./data')
 const ouputdynamo  = require('./ouput_dynamo.json')
 
-let newArrayFor = []
-
+let newArray = []
 
 console.time('For')
 for (let i = 0; i < ouputdynamo.length; i++) {
-  if(ouputdynamo[i].countyName.S === 'RIO GRANDE') {
-    newArrayFor.push(ouputdynamo[i])
-  }
+  newArray.push(ouputdynamo[i].countyName.S)
 }
 console.timeEnd('For')
 
+console.time('forIn')
+for (let i in ouputdynamo) {
+  newArray.push(ouputdynamo[i].countyName.S)
+}
+console.timeEnd('forIn')
+
+
+console.time('forOF')
+for (const city of ouputdynamo) {
+  newArray.push(city.countyName.S)
+}
+console.timeEnd('forOF')
+// console.log(newArray)
+
+
+
+
 
 console.time('forEach')
-let newArray = []
 ouputdynamo.forEach(element => {
-  if(element.countyName.S === 'RIO GRANDE') {
-    return newArray.push(element)
-  }  
+  newArray.push(element.countyName.S)
 });
 console.timeEnd('forEach')
-
-
-console.time('find')
-const search = ouputdynamo.find(element => element.countyName.S === 'RIO GRANDE')
-console.timeEnd('find')
-// console.log(search)
 
 console.time('map')
 const names = ouputdynamo.map(element => element.countyName.S)
 console.timeEnd('map')
-// console.log(names)
+
+
+// console.time('find')
+// const search = ouputdynamo.find(element => element.countyName.S === 'RIO GRANDE')
+// console.timeEnd('find')
+// // console.log(search)
+
+
 
 
 
