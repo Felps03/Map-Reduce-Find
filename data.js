@@ -26,6 +26,22 @@ let person = [
   },
 ]
 
+var produtos = [
+  {
+      nome : "Smartphone 5' Android",
+      preco : 1200
+  },
+  {
+      nome : "Notebook 4GB Windows 10",
+      preco : 2100
+  },
+  {
+      nome : "SmartTV 50' LED",
+      preco : 8700
+  }
+];
+
 module.exports = person ;
+module.exports = produtos ;
 
 
